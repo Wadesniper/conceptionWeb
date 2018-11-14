@@ -24,7 +24,7 @@
         define('HOST', 'localhost');
         define('DB_NAME', 'phplogin');
         define('USER', 'root');
-        define('PASS', 'root');
+        define('PASS', 'wade5555');
 
         try{
             $db = new PDO('mysql:host='.HOST .';dbname='.DB_NAME, USER, PASS);
