@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
     {
         $_SESSION['username']=$username;
 header('Location:membre.php');
-    }else echo"pseudo ou mot de pass incorrect";
+    }else echo"pseudo ou mot de passe incorrect";
 
 }
 
