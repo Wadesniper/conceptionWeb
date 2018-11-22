@@ -34,7 +34,7 @@
                                             </li>
                                         </ul>
                                         <div class="btn-group">
-                                            <a href="#" class="btn btn-info">S'enregister</a>
+                                            <a href="type_inscription.html" class="btn btn-info">S'enregister</a>
                                             <a href="#" class="btn btn-success">Se connecter</a>
                                         </a>
                                    </div>                                        
