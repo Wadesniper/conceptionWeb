@@ -21,28 +21,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Le Plan</a>
+                            <a class="nav-link" href="process.html">Le Programme</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Les Bateaux</a>
+                            <a class="nav-link" href="Bateau.php">Les Bateaux</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="contact.php">Contact</a>
                         </li>
                     </ul>
                     <div class="btn-group">
                         <a href="type_inscription.php" class="btn btn-info">S'enregister</a>
-                        <a href="#" class="btn btn-success">Se connecter</a>
+                        <a href="login.php" class="btn btn-success">Se connecter</a>
                     </a>
                </div>                                        
           </nav>
           <div id="conteneur">
-              <a class="btn-info btn-lg configbouton" href="register_visiteur.php">Visiteur</a>
-              <a class="btn-info btn-lg configbouton" href="register_respbateau.php">Responsable Bateau</a>
-              <a class="btn-info btn-lg configbouton" href="register_administateur.php">Administateur</a>
+              <a href="register_visiteur.php" class="btn-info btn-lg configbouton">Visiteur</a>
+              <a href="register_respbateau.php" class="btn-info btn-lg configbouton">Responsable Bateau</a>
+              <a href="register_administateur.php" class="btn-info btn-lg configbouton">Administateur</a>
           </div> 
     </body>
 </html>
