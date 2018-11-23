@@ -8,10 +8,10 @@
              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
              <link rel="stylesheet" href="styleindex.css" />
-             <title>L'ARMADA 2019 à Rouen by Groupe 9_1</title>
+             <title>Contact Armada 2019</title>
     </head>
     
-    <body>
+    <body class="fond">
                               <!-- Navbar de la page -->
                               <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
                                     <a class="navbar-brand" href="#">Armada 2019</a>
@@ -30,7 +30,7 @@
                                                 <a class="nav-link" href="Bateaux.php">Les Bateaux</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="contact.php">Contact</a>
+                                                <a class="nav-link" href="contact.php">Contact<span class="sr-only">(current)</span></a>
                                             </li>
                                         </ul>
                                         <div class="btn-group">
@@ -39,27 +39,12 @@
                                         </a>
                                    </div>                                        
                               </nav>
-                                                    
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="photo_bateau/image1.jpg" alt="First slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="photo_bateau/image2.jpg" alt="Second slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="photo_bateau/image3.jpg" alt="Third slide">
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-            </div>   
+            <h1>Pour nous contacter :</h1>
+            <ul id="conteneur">
+                <li>Mail : armada@rouen.fr</li>
+                <li>Téléphone : 02 35 00 00 00</li>
+                <li>Adresse : 1 quai de l'armada 76000 Rouen</li> 
+            </ul>
     </body>
 </html>
+                        

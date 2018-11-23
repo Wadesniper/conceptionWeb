@@ -40,9 +40,9 @@
                </div>                                        
           </nav>
           <div id="conteneur">
-              <a class="btn-info btn-lg configbouton" href="register_visiteur.php">Visiteur</a>
-              <a class="btn-info btn-lg configbouton" href="register_respbateau.php">Responsable Bateau</a>
-              <a class="btn-info btn-lg configbouton" href="register_administateur.php">Administateur</a>
+              <a class="btn-info btn-lg configbouton">Visiteur</a>
+              <a class="btn-info btn-lg configbouton">Responsable Bateau</a>
+              <a class="btn-info btn-lg configbouton">Administateur</a>
           </div> 
     </body>
 </html>
