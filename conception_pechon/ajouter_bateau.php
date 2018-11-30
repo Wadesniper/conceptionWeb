@@ -115,8 +115,7 @@ if(!empty($_FILES)){
                                             </div> 
                                         <?php
                                         }
-                                        ?>
-                                                                           
+                                        ?>                                
                               </nav>
             <h1>Ajouter un bateau</h1>
             <form method="POST" enctype="multipart/form-data">
