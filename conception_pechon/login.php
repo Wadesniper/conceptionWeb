@@ -1,60 +1,38 @@
 <?php
     session_start();
     include_once('includes.php'); // Fichier PHP contenant la connexion à votre BDD
-  // S'il y a une session alors on ne retourne plus sur cette page  
-    if (isset($_SESSION['type'])){
-        header('Location: index.php');
-        exit;
-    }
-
-    // Si la variable "$_Post" contient des informations alors on les traitres
     if(!empty($_POST)){
         extract($_POST);
         $valid = true;
+        $email = htmlspecialchars(trim($email));
+        $password = trim($password);
 
-        if (isset($_POST['connexion'])){
-
-            $email = htmlentities(strtolower(trim($email)));
-            $password = trim($password);
-
-            if(empty($email)){ // Vérification qu'il y est bien un mail de renseigné
-                $valid = false;
-                $er_mail = "Il faut mettre un mail";
-            }
-
-            if(empty($password)){ // Vérification qu'il y est bien un mot de passe de renseigné
-                $valid = false;
-                $er_mdp = "Il faut mettre un mot de passe";
-            }
-
-            // On fait une requête pour savoir si le couple mail / mot de passe existe bien car le mail est unique !
-            $req = $DB->query("SELECT * 
-                FROM utilisateur 
-                WHERE email = ? AND password = ?",
-                array($email, $password));
-
-            $req = $req->fetch();
-
-            // Si on a pas de résultat alors c'est qu'il n'y a pas d'utilisateur correspondant au couple mail / mot de passe
-            if ($req['email'] != $_SESSION['email']){
-                $valid = false;
-                $er_mail = "Le mail ou le mot de passe est incorrecte";
-            }
-
-            // S'il y a un résultat alors on va charger la SESSION de l'utilisateur en utilisateur les variables $_SESSION
-            if ($valid){
-
-                $_SESSION['type'] = $req['type']; // id de l'utilisateur unique pour les requêtes futures
-                $_SESSION['nom'] = $req['nom'];
-                $_SESSION['prenom'] = $req['prenom'];
-                $_SESSION['email'] = $req['email'];
-
-                header('Location:  index.php');
-                exit;
-            }   
-        }
+    if(empty($email)){
+        $valid = false;
+        $error_email = "Veuillez renseigner votre email";
     }
-?>
+    
+    if(empty($password)){
+        $valid = false;
+        $error_password = "Veuillez renseigner un mot de passe";
+    }
+    $req = $DB->query('Select * from users where email = ? and password = ?', array ($email, $password));
+    $req = $req->fetch();
+    
+    if(!$req['email']){
+        $valid = false;
+        $error_compt = "Votre pseudo ou mot de passe ne correspondent pas";
+    }   
+    
+    if($valid){
+        $_SESSION['email'] = $req['email'];
+        $_SESSION['type'] = $req['type'];
+        $_SESSION['users_id'] = $req['users_id'];
+        header('Location: index.php');
+        exit;
+    }
+}
+    ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
@@ -95,27 +73,29 @@
                               </nav>
         <h1>Se connecter</h1>
         <form method="post">
-
             <?php
-                if (isset($er_mail)){
+                if (isset($error_email)){
             ?>
-                <div><?= $er_mail ?></div>
+                <div><?= $error_email ?></div>
             <?php   
                 }
             ?>
-
-            <input type="email" placeholder="Adresse mail" name="email" value="<?php if(isset($email)){ echo $email; }?>" required>
-
+            <input type="email" placeholder="Adresse mail" name="email" required>
             <?php
-                if (isset($er_mdp)){
+                if (isset($error_password)){
             ?>
-                <div><?= $er_mdp ?></div>
+                <div><?= $error_password ?></div>
             <?php   
                 }
             ?>
-
-            <input type="password" placeholder="Mot de passe" name="password" value="<?php if(isset($password)){ echo $password; }?>" required>
-
+            <input type="password" placeholder="Mot de passe" name="password" required>
+            <?php
+                if (isset($error_compt)){
+            ?>
+                <div><?= $error_compt ?></div>
+            <?php   
+                }
+            ?>
             <button type="submit" name="connexion">Se connecter</button>
 
         </form>
